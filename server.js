@@ -2,35 +2,32 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const users = {
-  1: {
+const users = [
+  {
+    id: '1',
     name: 'Juan',
     lastName: 'Pérez',
-    email: 'juan@example.com',
-    id: '12345'
+    email: 'juan.perez@universidad.edu'
   },
-  2: {
+  {
+    id: '2',
     name: 'Ana',
     lastName: 'Gómez',
-    email: 'ana@example.com',
-    id: '67890'
+    email: 'ana.gomez@universidad.edu'
   }
-};
+];
 
-// Servir la carpeta 'public' (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Endpoint dinámico para obtener usuario por ID
 app.get('/user-info/:id', (req, res) => {
-  const id = req.params.id;
-  if (users[id]) {
-    res.json(users[id]);
-  } else {
-    res.status(404).json({ error: 'Usuario no encontrado' });
+  const { id } = req.params;
+  const user = users.find(u => u.id === id);
+
+  if (!user) {
+    return res.status(404).json({ error: 'Usuario no encontrado' });
   }
+
+  res.json(user);
 });
 
-// Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor en http://localhost:${port}`);
+  console.log(`Servidor en ejecución en http://localhost:${port}`);
 });
