@@ -1,42 +1,36 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = 3000;
 
-// Datos de los estudiantes (cambia estos valores con tu información real)
-const students = {
+const users = {
   1: {
-    name: "Jose",
-    lastName: "Marmolejo",
-    email: "josemarloz@unisabana.edu.co",
-    id: "0000285873",
+    name: 'Juan',
+    lastName: 'Pérez',
+    email: 'juan@example.com',
+    id: '12345'
   },
   2: {
-    name: "Julian",
-    lastName: "Pedraza",
-    email: "julianpepa@unisabana.edu",
-    id: "0000307536",
-  },
+    name: 'Ana',
+    lastName: 'Gómez',
+    email: 'ana@example.com',
+    id: '67890'
+  }
 };
 
-// Mostrar el index.html directamente
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// Servir la carpeta 'public' (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
 
-
-// Endpoint para obtener información de un estudiante según el ID
-app.get("/user-info/:id", (req, res) => {
-  const studentId = req.params.id;
-
-  // Validar que el ID sea 1 o 2
-  if (!["1", "2"].includes(studentId)) {
-    return res.status(404).json({ error: "Estudiante no encontrado" });
+// Endpoint dinámico para obtener usuario por ID
+app.get('/user-info/:id', (req, res) => {
+  const id = req.params.id;
+  if (users[id]) {
+    res.json(users[id]);
+  } else {
+    res.status(404).json({ error: 'Usuario no encontrado' });
   }
-
-  res.json(students[studentId]);
 });
 
-// Iniciar servidor
+// Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Servidor en http://localhost:${port}`);
 });
