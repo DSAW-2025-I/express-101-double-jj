@@ -34,3 +34,6 @@ app.get("/user-info/:id", (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
+// Línea nueva para servir archivos estáticos desde "public/"
+app.use(express.static('public'));
