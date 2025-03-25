@@ -58,8 +58,11 @@ El objeto JSON que debe retornar cada endpoint debe tener la siguiente estructur
 
 ### URLS
 https://user-info-backend-beta.vercel.app
+
 https://user-info-backend-beta.vercel.app/user-info/1
+
 https://user-info-backend-beta.vercel.app/user-info/2
+
 https://user-info-backend-beta.vercel.app/user-info/3
 
 ### NOTA
