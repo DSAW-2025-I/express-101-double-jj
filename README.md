@@ -51,15 +51,26 @@ El objeto JSON que debe retornar cada endpoint debe tener la siguiente estructur
 | Servidor desplegado correctamente  | 1        |
 | Total                          | 5          |
 
-### Casos especiales
+### IMAGENES
+![image](https://github.com/user-attachments/assets/a0de06fd-d8ae-40ee-a25d-00efe23b5e47)
+![image](https://github.com/user-attachments/assets/6d19a577-fd4c-469a-ad4a-eb520bc95106)
+![image](https://github.com/user-attachments/assets/049a90d5-f521-414d-bbbe-020917e63ac0)
 
-- Si el equipo está formado por un solo estudiante, únicamente se debe implementar el endpoint `/user-info/1`.
-- Si hay dos estudiantes, ambos endpoints deben estar implementados y retornar información correcta.
+### URLS
+https://user-info-backend-beta.vercel.app
+https://user-info-backend-beta.vercel.app/user-info/1
+https://user-info-backend-beta.vercel.app/user-info/2
+https://user-info-backend-beta.vercel.app/user-info/3
 
-### Recursos adicionales
+### NOTA
+Todos los archivos con los codigos estan en la rama main.
 
-- [Guía de Express.js](https://expressjs.com/es/)
-- [Guía de Node.js](https://nodejs.org/es/docs/)
-- [ Despliegue de aplicaciones Node.js en Netlify](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/)
-- [Despliegue de aplicaciones Express.js en Vercel](https://vercel.com/docs/deployments/overview/)
+### INTEGRANTES
+Julian Andres Pedraza Padilla 
+Jose David Marmolejo Lozano
+
+
+
+
+
 
