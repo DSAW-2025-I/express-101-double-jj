@@ -70,6 +70,7 @@ Todos los archivos con los codigos estan en la rama main.
 
 ### INTEGRANTES
 Julian Andres Pedraza Padilla 
+
 Jose David Marmolejo Lozano
 
 
